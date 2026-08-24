@@ -1,7 +1,7 @@
 # Big Data
 Repositorio de prácticas y proyectos desarrollados durante la materia de **Big Data**.
  
- 
+
 ## Descripción
 Este repositorio contiene las prácticas, ejercicios y proyectos realizados
 durante el curso. Cada práctica se plantea como un proyecto de datos
