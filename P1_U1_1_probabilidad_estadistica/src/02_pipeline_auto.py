@@ -5,7 +5,7 @@ import requests
 # ============================================================
 # 1. OBTENCIÓN DE LOS DATOS
 # ============================================================
-
+"""
 url_datos = (
     "https://ourworldindata.org/grapher/life-expectancy.csv"
     "?v=1&csvType=full&useColumnShortNames=true"
@@ -17,19 +17,23 @@ df = pd.read_csv(
         "User-Agent": "Our World In Data data fetch/1.0"
     }
 )
-
+"""
+# Fetch the data.
+df = pd.read_csv("https://ourworldindata.org/grapher/electricity-mix.csv?v=1&csvType=full&useColumnShortNames=true&frequency=annual&metric=share_of_generation&source=renewables", storage_options = {'User-Agent': 'Our World In Data data fetch/1.0'})
 
 # ============================================================
 # 2. OBTENCIÓN DE LOS METADATOS
 # ============================================================
-
+"""
 url_metadata = (
     "https://ourworldindata.org/grapher/life-expectancy.metadata.json"
     "?v=1&csvType=full&useColumnShortNames=true"
 )
 
 metadata = requests.get(url_metadata).json()
-
+"""
+# Fetch the metadata
+metadata = requests.get("https://ourworldindata.org/grapher/electricity-mix.metadata.json?v=1&csvType=full&useColumnShortNames=true&frequency=annual&metric=share_of_generation&source=renewables").json()
 
 # ============================================================
 # 3. FUNCIÓN DEL PIPELINE
